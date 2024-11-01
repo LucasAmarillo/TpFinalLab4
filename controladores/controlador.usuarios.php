@@ -33,7 +33,7 @@ INGRESO DE USUARIO
                     $_SESSION["nombre"] = $respuesta["nombre"];
 
                     echo '<script>
-                    window.location = "inicio";
+                    window.location = "home";
                     </script>';
                 } else {
                     echo '<div class="alert alert-danger mt-3" role="alert">

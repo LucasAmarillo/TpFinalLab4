@@ -82,13 +82,12 @@ $url = ControladorPlantilla::url();
                     // print_r($rutas);
                     // echo "</pre>";
                     if (
-                        $rutas[0] == "inicio" ||
+                        $rutas[0] == "home" ||
+                        $rutas[0] == "usuarios" ||
+                        $rutas[0] == "entrenadores" ||
                         $rutas[0] == "planes" ||
-                        $rutas[0] == "agregar_producto" ||
                         $rutas[0] == "editar_plan" ||
-                        $rutas[0] == "editar_plan" ||
-                        $rutas[0] == "salir" ||
-                        $rutas[0] == "usuarios"
+                        $rutas[0] == "salir"
                     ) {
 
                         include "vistas/modulos/" . $rutas[0] . ".php";

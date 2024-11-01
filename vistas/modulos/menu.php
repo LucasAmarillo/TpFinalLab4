@@ -41,15 +41,21 @@
                 </li>
 
                 <li>
-                    <a href="<?php echo $url; ?>categorias">
+                    <a href="<?php echo $url; ?>entrenadores">
                         <i data-feather="globe"></i>
-                        <span> Categorías </span>
+                        <span> Entrenadores </span>
                     </a>
                 </li>
                 <li>
                     <a href="<?php echo $url; ?>planes">
                         <i data-feather="globe"></i>
                         <span> Planes </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $url; ?>salir">
+                        <i data-feather="globe"></i>
+                        <span> Salir </span>
                     </a>
                 </li>
 
