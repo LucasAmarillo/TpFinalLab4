@@ -40,9 +40,11 @@ $cantidad = count($planes);
                                     <td><?php echo $value["duracion"]; ?></td>
                                     <td><?php echo $value["cantidad_sesiones"]; ?></td>
                                     <td><?php echo ($value["estado"] == 1) ? "Activo" : "Inactivo"; ?></td>
-                                    <td><a href="editar_plan/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminarPlan" id_plan=<?php echo $value["id_plan"]; ?>><i class="fas fa-trash"></i></button>
+                                    <td>
+                                        <a href="editar_plan/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-danger btnEliminarPlan" id_plan="<?php echo $value["id_plan"]; ?>"> <i class="fas fa-trash"></i></button>
                                     </td>
+
                                 </tr>
                             <?php } ?>
 

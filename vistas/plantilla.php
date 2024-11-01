@@ -47,14 +47,6 @@ $url = ControladorPlantilla::url();
     <script src="<?php echo $url; ?>vistas/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 
 
-    <!-- Datatable Demo App Js -->
-    <script src="<?php echo $url; ?>vistas/assets/js/pages/datatable.init.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="<?php echo $url; ?>vistas/assets/js/alerts.js"></script>
-
-    <script src="<?php echo $url; ?>vistas/assets/js/eliminar.js"></script>
 
 </head>
 
@@ -86,13 +78,13 @@ $url = ControladorPlantilla::url();
 
                     $rutas = explode('/', $_GET["pagina"]);
 
-                    //echo "<pre>";
-                    //print_r($rutas);
-                    //echo "</pre>";
+                    echo "<pre>";
+                    print_r($rutas);
+                    echo "</pre>";
                     if (
-                        $rutas[0] == "categorias" ||
                         $rutas[0] == "planes" ||
                         $rutas[0] == "agregar_producto" ||
+                        $rutas[0] == "editar_plan" ||
                         $rutas[0] == "editar_plan" ||
                         $rutas[0] == "salir" ||
                         $rutas[0] == "usuarios"
@@ -131,5 +123,14 @@ $url = ControladorPlantilla::url();
 }
 
 ?>
+
+<!-- Datatable Demo App Js -->
+<script src="<?php echo $url; ?>vistas/assets/js/pages/datatable.init.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="<?php echo $url; ?>vistas/assets/js/alerts.js"></script>
+
+<script src="<?php echo $url; ?>vistas/assets/js/eliminar.js"></script>
 
 </html>

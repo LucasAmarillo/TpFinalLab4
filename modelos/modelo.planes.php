@@ -9,7 +9,7 @@ class ModeloPlanes
     {
         if ($item != null) {
             try {
-                $stmt = Conexion::conectar()->prepare("SELECT * FROM plan_entrenamiento WHERE $item = :$item");
+                $stmt = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre, p.descripcion, p.duracion, p.cantidad_sesiones, p.estado FROM plan_entrenamiento p WHERE $item = :$item");
                 //enlace de parametros
                 $stmt->bindParam(":" . $item, $valor, PDO::PARAM_INT);
                 $stmt->execute();
@@ -34,13 +34,15 @@ class ModeloPlanes
     static public function mdlAgregarPlan($tabla, $datos)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, stock, precio, id_categoria) VALUES (:nombre, :stock, :precio, :id_categoria)");
+            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, nombre, descripcion, duracion, cantidad_sesiones, estado) VALUES (:codigo, :nombre, :descripcion, :duracion, :cantidad_sesiones, :estado)");
 
             // UN ENLACE POR CADA DATO, TENER EN CUENTA EL TIPO DE DATO STR O INT
+            $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
             $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-            $stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_INT);
-            $stmt->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
-            $stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
+            $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+            $stmt->bindParam(":duracion", $datos["duracion"], PDO::PARAM_STR);
+            $stmt->bindParam(":cantidad_sesiones", $datos["cantidad_sesiones"], PDO::PARAM_INT);
+            $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
 
             if ($stmt->execute()) {
 
@@ -57,13 +59,14 @@ class ModeloPlanes
     static public function mdlEditarPlan($tabla, $datos)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, precio = :precio, stock = :stock, id_categoria = :id_categoria WHERE id_producto = :id_producto");
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, duracion = :duracion, cantidad_sesiones = :cantidad_sesiones, estado = :estado WHERE id_plan = :id_plan");
 
+            $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
             $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-            $stmt->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
-            $stmt->bindParam(":stock", $datos["stock"], PDO::PARAM_INT);
-            $stmt->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
-            $stmt->bindParam(":id_producto", $datos["id_producto"], PDO::PARAM_INT);
+            $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+            $stmt->bindParam(":duracion", $datos["duracion"], PDO::PARAM_INT);
+            $stmt->bindParam(":cantidad_sesiones", $datos["cantidad_sesiones"], PDO::PARAM_INT);
+            $stmt->bindParam(":estadp", $datos["estadp"], PDO::PARAM_INT);
 
             if ($stmt->execute()) {
 
@@ -82,9 +85,9 @@ ELIMINAR DATO
     static public function mdlEliminarPlan($tabla, $dato)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_producto = :id_producto");
+            $stmt = Conexion::conectar()->prepare("DELETE FROM plan_entrenamiento WHERE id_plan = :id_plan");
 
-            $stmt->bindParam(":id_producto", $dato, PDO::PARAM_INT);
+            $stmt->bindParam(":id_plan", $dato, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
                 return "ok";

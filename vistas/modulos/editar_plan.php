@@ -4,7 +4,6 @@ $item = "id_plan";
 $valor = $rutas[1];
 
 $plan = ControladorPlanes::ctrMostrarPlanes($item, $valor);
-$categorias = Controladorcategorias::ctrMostrarcategorias();
 
 if ($plan) {
 ?>
@@ -41,14 +40,10 @@ if ($plan) {
                         <input type="number" id="cantidad_sesiones" name="cantidad_sesiones" class="form-control" value="<?php echo $plan["cantidad_sesiones"]; ?>" placeholder="Cantidad de sesiones" required>
                     </div>
                     <div class="mb-3">
-                        <label for="estado" class="form-label">Estado</label>
-                        <input type="text" id="estado" name="estado" class="form-control"
-                            value=" <?php
-                                    if ($plan["estado"] == 1)
-                                        echo "Activo";
-                                    else
-                                        echo "Inactivo";
-                                    ?>" placeholder="Estado" required>
+                        <select class="form-select" name="estado" id="example-select" required>
+                            <option value="1" <?php if ($plan["estado"] == 1) echo 'selected'; ?>>Activo</option>
+                            <option value="0" <?php if ($plan["estado"] == 0) echo 'selected'; ?>>Inactivo</option>
+                        </select>
                     </div>
 
                     <input type="hidden" name="id_plan" value="<?php echo $plan["id_plan"]; ?>">

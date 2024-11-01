@@ -4,15 +4,14 @@
 class ControladorPlanes
 {
 
-    // mostrar productos
+    // mostrar Planes
     static public function ctrMostrarPlanes($item, $valor)
     {
-
         $respuesta = ModeloPlanes::mdlMostrarPlanes($item, $valor);
         return $respuesta;
     }
 
-    //agregar productos
+    //agregar Planes
 
     public function ctrAgregarPlan()
     {
@@ -22,9 +21,11 @@ class ControladorPlanes
 
             $datos = array(
                 "nombre" => $_POST["nombre"],
-                "stock" => $_POST["stock"],
-                "precio" => $_POST["precio"],
-                "id_categoria" => $_POST["categoria"]
+                "codigo" => $_POST["codigo"],
+                "descripcion" => $_POST["descripcion"],
+                "duracion" => $_POST["duracion"],
+                "cantidad_sesiones" => $_POST["cantidad_sesiones"],
+                "estado" => $_POST["estado"],
             );
 
             //print_r($datos);
@@ -57,10 +58,12 @@ EDITAR DATOS
         if (isset($_POST["id_plan"])) {
             $datos = array(
                 "nombre" => $_POST["nombre"],
-                "stock" => $_POST["stock"],
-                "precio" => $_POST["precio"],
-                "id_categoria" => $_POST["categoria"],
-                "id_producto" => $_POST["id_producto"]
+                "codigo" => $_POST["codigo"],
+                "descripcion" => $_POST["descripcion"],
+                "duracion" => $_POST["duracion"],
+                "cantidad_sesiones" => $_POST["cantidad_sesiones"],
+                "estado" => $_POST["estado"],
+
             );
             $url = ControladorPlantilla::url() . "planes";
 
@@ -83,11 +86,11 @@ ELIMINAR
     static public function ctrEliminarPlan()
     {
 
-        if (isset($_GET["id_producto_eliminar"])) {
+        if (isset($_GET["id_plan_eliminar"])) {
 
             $url = ControladorPlantilla::url() . "planes";
-            $tabla = "plan_entrenacimiento";
-            $dato = $_GET["id_producto_eliminar"];
+            $tabla = "plan_entrenamiento";
+            $dato = $_GET["id_plan_eliminar"];
 
             $respuesta = ModeloPlanes::mdlEliminarPlan($tabla, $dato);
 
