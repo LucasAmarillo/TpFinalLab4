@@ -28,6 +28,12 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
+                    <a href="<?php echo $url; ?>home">
+                        <i data-feather="aperture"></i>
+                        <span> Home </span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo $url; ?>usuarios">
                         <i data-feather="aperture"></i>
                         <span> Usuarios </span>

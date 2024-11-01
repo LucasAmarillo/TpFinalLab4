@@ -78,10 +78,11 @@ $url = ControladorPlantilla::url();
 
                     $rutas = explode('/', $_GET["pagina"]);
 
-                    echo "<pre>";
-                    print_r($rutas);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // print_r($rutas);
+                    // echo "</pre>";
                     if (
+                        $rutas[0] == "inicio" ||
                         $rutas[0] == "planes" ||
                         $rutas[0] == "agregar_producto" ||
                         $rutas[0] == "editar_plan" ||
