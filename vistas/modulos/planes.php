@@ -6,7 +6,7 @@ $cantidad = count($planes);
 ?>
 <div class="row">
     <div class="col-12">
-        <h1>Planes de entrenamiento</h1>
+        <h1 class="text-center mt-3">Planes de entrenamiento <img src="<?php echo $url; ?>vistas/assets/img/plan.png" style="width: 3%;" class="mt-1" alt="planes"></h1>
         <div class="card">
 
             <div class="card-header">
@@ -35,7 +35,7 @@ $cantidad = count($planes);
                             ?>
                                 <tr style="background-color:#000888">
                                     <td><?php echo $value["codigo"]; ?></td>
-                                    <td><?php echo $value["nombre"]; ?></td>
+                                    <td><?php echo $value["nombre_plan"]; ?></td>
                                     <td><?php echo $value["descripcion"]; ?></td>
                                     <td><?php echo $value["duracion"]; ?></td>
                                     <td><?php echo $value["cantidad_sesiones"]; ?></td>

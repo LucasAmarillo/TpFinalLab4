@@ -8,8 +8,8 @@ require_once 'modelos/modelo.usuarios.php';
 require_once 'controladores/controlador.planes.php';
 require_once 'modelos/modelo.planes.php';
 
-// require_once 'controladores/controlador.entrenadores.php';
-// require_once 'modelos/modelo.entrenadores.php';
+require_once 'controladores/controlador.entrenadores.php';
+require_once 'modelos/modelo.entrenadores.php';
 
 
 

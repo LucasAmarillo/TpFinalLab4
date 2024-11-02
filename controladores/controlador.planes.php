@@ -17,7 +17,7 @@ class ControladorPlanes
     {
         if (isset($_POST["nombre"])) {
 
-            $tabla = "plan_entrenamiento"; //nombre de la tabla
+            $tabla = "planes"; //nombre de la tabla
 
             $datos = array(
                 "nombre" => $_POST["nombre"],
