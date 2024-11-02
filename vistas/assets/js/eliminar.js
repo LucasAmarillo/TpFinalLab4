@@ -1,7 +1,7 @@
-$(document).on("click", ".btnEliminarPlan", function () {
-  let id_plan = $(this).attr("id_plan");
+$(document).on("click", ".btnEliminarCliente", function () {
+  let id_cliente = $(this).attr("id_cliente");
 
-  console.log(id_plan);
+  console.log(id_cliente);
 
   Swal.fire({
     title: "Está seguro de eliminar el plan?",
@@ -14,7 +14,8 @@ $(document).on("click", ".btnEliminarPlan", function () {
     confirmButtonText: "Si, eliminar plan",
   }).then(function (result) {
     if (result.value) {
-      window.location = "index.php?pagina=planes&id_plan_eliminar=" + id_plan; // Redirigir con el ID
+      window.location =
+        "index.php?pagina=planes&id_plan_eliminar=" + id_cliente; // Redirigir con el ID
     }
   });
 });

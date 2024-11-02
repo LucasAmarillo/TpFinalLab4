@@ -64,7 +64,7 @@ $cantidad = count($clientes);
                                     </td>
 
                                     <td class="text-center"><a href="editar_usuario/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminarcliente" id_cliente=<?php echo $value["id_cliente"]; ?>><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger btnEliminarcliente" id_cliente=<?php echo $value["id_cliente"] ?>><i class="fas fa-trash"></i></button>
                                     </td>
 
                                 </tr>
@@ -87,7 +87,7 @@ $cantidad = count($clientes);
 
 <?php
 
-// $eliminar = new ModeloUsuarios();
-// $eliminar->ctrEliminarUsuario();
+// $eliminar = new ModeloClientes();
+// $eliminar->ctrEliminarCliente(1);
 
 ?>

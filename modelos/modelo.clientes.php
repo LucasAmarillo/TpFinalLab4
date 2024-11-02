@@ -31,4 +31,19 @@ class ModeloClientes
             }
         }
     }
+    static public function mdlEliminarCliente($tabla, $datos)
+    {
+        try {
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado = 0 WHERE id_cliente = :id_cliente");
+            $stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return "ok";
+            } else {
+                return "error";
+            }
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }

@@ -46,6 +46,15 @@ $url = ControladorPlantilla::url();
     <script src="<?php echo $url; ?>vistas/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
     <script src="<?php echo $url; ?>vistas/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 
+    <!-- Datatable Demo App Js -->
+    <script src="<?php echo $url; ?>vistas/assets/js/pages/datatable.init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="<?php echo $url; ?>vistas/assets/js/alerts.js"></script>
+
+    <script src="<?php echo $url; ?>vistas/assets/js/eliminar.js"></script>
+
 
 
 </head>
@@ -125,13 +134,6 @@ $url = ControladorPlantilla::url();
 
 ?>
 
-<!-- Datatable Demo App Js -->
-<script src="<?php echo $url; ?>vistas/assets/js/pages/datatable.init.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<script src="<?php echo $url; ?>vistas/assets/js/alerts.js"></script>
-
-<script src="<?php echo $url; ?>vistas/assets/js/eliminar.js"></script>
 
 </html>
