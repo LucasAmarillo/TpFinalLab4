@@ -4,20 +4,20 @@
 class ControladorEntrenadores
 {
 
-    // mostrar Planes
-    static public function ctrMostrarPlanes($item, $valor)
+    // mostrar Entrenadores
+    static public function ctrMostrarEntrenadores($item, $valor)
     {
-        $respuesta = ModeloPlanes::mdlMostrarPlanes($item, $valor);
+        $respuesta = ModeloEntrenadores::mdlMostrarEntrenadores($item, $valor);
         return $respuesta;
     }
 
-    //agregar Planes
+    //agregar Entrenadores
 
-    public function ctrAgregarPlan()
+    public function ctrAgregarEntrenador()
     {
         if (isset($_POST["nombre"])) {
 
-            $tabla = "plan_entrenamiento"; //nombre de la tabla
+            $tabla = "entrenador"; //nombre de la tabla
 
             $datos = array(
                 "nombre" => $_POST["nombre"],
@@ -34,14 +34,14 @@ class ControladorEntrenadores
 
             //podemos volver a la página de datos
 
-            $url = ControladorPlantilla::url() . "planes";
-            $respuesta = ModeloPlanes::mdlAgregarPlan($tabla, $datos);
+            $url = ControladorPlantilla::url() . "entrenadores";
+            $respuesta = ModeloEntrenadores::mdlAgregarEntrenador($tabla, $datos);
 
             if ($respuesta == "ok") {
                 echo '<script>
                     fncSweetAlert(
                     "success",
-                    "El plan se agregó correctamente",
+                    "El entrenador se agregó correctamente",
                     "' . $url . '"
                     );
                     </script>';
@@ -49,13 +49,13 @@ class ControladorEntrenadores
         }
     }
 
-    /*=============================================
-EDITAR DATOS
-=============================================*/
-    public function ctrEditarPlan()
+
+    // Edicion de datos de entrenador
+
+    public function ctrEditarEntrenador()
     {
-        $tabla = "plan_entrenamiento";
-        if (isset($_POST["id_plan"])) {
+        $tabla = "entrenador";
+        if (isset($_POST["id_entrenador"])) {
             $datos = array(
                 "nombre" => $_POST["nombre"],
                 "codigo" => $_POST["codigo"],
@@ -65,14 +65,14 @@ EDITAR DATOS
                 "estado" => $_POST["estado"],
 
             );
-            $url = ControladorPlantilla::url() . "planes";
+            $url = ControladorPlantilla::url() . "entrenadores";
 
-            $respuesta = ModeloPlanes::mdlEditarPlan($tabla, $datos);
+            $respuesta = ModeloEntrenadores::mdlEditarEntrenador($tabla, $datos);
             if ($respuesta == "ok") {
                 echo '<script>
                 fncSweetAlert(
                 "success",
-                "El plan se actualizó correctamente",
+                "El entrenador se actualizó correctamente",
                 "' . $url . '"
                 );
                 </script>';
@@ -80,23 +80,23 @@ EDITAR DATOS
         }
     }
 
-    /*=============================================
-ELIMINAR
-=============================================*/
-    static public function ctrEliminarPlan()
+
+    //    Eliminar entrenador
+
+    static public function ctrEliminarEntrenador()
     {
 
-        if (isset($_GET["id_plan_eliminar"])) {
+        if (isset($_GET["id_entreandor_eliminar"])) {
 
-            $url = ControladorPlantilla::url() . "planes";
-            $tabla = "plan_entrenamiento";
-            $dato = $_GET["id_plan_eliminar"];
+            $url = ControladorPlantilla::url() . "entrenador";
+            $tabla = "entrenador";
+            $dato = $_GET["id_entrenador_eliminar"];
 
-            $respuesta = ModeloPlanes::mdlEliminarPlan($tabla, $dato);
+            $respuesta = ModeloEntrenadores::mdlEliminarEntrenador($tabla, $dato);
 
             if ($respuesta == "ok") {
                 echo '<script>
-                fncSweetAlert("success", "El plan se eliminó correctamente", "' . $url . '");
+                fncSweetAlert("success", "El entrenador se eliminó correctamente", "' . $url . '");
                 </script>';
             }
         }

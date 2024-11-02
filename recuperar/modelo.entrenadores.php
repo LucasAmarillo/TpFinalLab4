@@ -10,7 +10,7 @@ class ModeloEntrenadores
     {
         if ($item != null) {
             try {
-                $stmt = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre, p.descripcion, p.duracion, p.cantidad_sesiones, p.estado FROM plan_entrenamiento p WHERE $item = :$item");
+                $stmt = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contracion,e.estado FROM entrenadores e WHERE $item = :$item");
                 //enlace de parametros
                 $stmt->bindParam(":" . $item, $valor, PDO::PARAM_INT);
                 $stmt->execute();
@@ -22,7 +22,7 @@ class ModeloEntrenadores
         } else {
 
             try {
-                $productos = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre, p.descripcion, p.duracion, p.cantidad_sesiones, p.estado FROM plan_entrenamiento as p INNER JOIN entrenador as e ON p.id_entrenador = e.id_entrenador");
+                $productos = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contracion, e.estado FROM entrenadores e INNER JOIN especialidades as es ON e.id_entrenador = es.id_entrenador");
                 $productos->execute();
 
                 return $productos->fetchAll(PDO::FETCH_ASSOC);
@@ -35,14 +35,16 @@ class ModeloEntrenadores
     static public function mdlAgregarEntrenador($tabla, $datos)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, nombre, descripcion, duracion, cantidad_sesiones, estado) VALUES (:codigo, :nombre, :descripcion, :duracion, :cantidad_sesiones, :estado)");
+            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, apellido, dni, telefono, email, id_especialidad, fecha_contracion, estado) VALUES (:nombre, :apellido, :dni, :telefono, :email, :id_especialidad, :fecha_contracion, :estado)");
 
             // UN ENLACE POR CADA DATO, TENER EN CUENTA EL TIPO DE DATO STR O INT
-            $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
             $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-            $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-            $stmt->bindParam(":duracion", $datos["duracion"], PDO::PARAM_STR);
-            $stmt->bindParam(":cantidad_sesiones", $datos["cantidad_sesiones"], PDO::PARAM_INT);
+            $stmt->bindParam(":apellido", $datos["apellido"], PDO::PARAM_STR);
+            $stmt->bindParam(":dni", $datos["dni"], PDO::PARAM_STR);
+            $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+            $stmt->bindParam(":id_especialidad", $datos["id_especialidad"], PDO::PARAM_STR);
+            $stmt->bindParam(":fecha_contracion", $datos["fecha_contracion"], PDO::PARAM_STR);
             $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
 
             if ($stmt->execute()) {
@@ -60,13 +62,15 @@ class ModeloEntrenadores
     static public function mdlEditarEntrenador($tabla, $datos)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, duracion = :duracion, cantidad_sesiones = :cantidad_sesiones, estado = :estado WHERE id_plan = :id_plan");
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellido = :apellido, dni = :dni, telefono = :telefono, email = :email, id_especialidad = :id_especialidad, fecha_contracion,  estado = :estado WHERE id_entrenador = :id_entrenador");
 
-            $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_INT);
             $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-            $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-            $stmt->bindParam(":duracion", $datos["duracion"], PDO::PARAM_INT);
-            $stmt->bindParam(":cantidad_sesiones", $datos["cantidad_sesiones"], PDO::PARAM_INT);
+            $stmt->bindParam(":apellido", $datos["apellido"], PDO::PARAM_STR);
+            $stmt->bindParam(":dni", $datos["dni"], PDO::PARAM_STR);
+            $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+            $stmt->bindParam(":id_especialidad", $datos["id_especialidad"], PDO::PARAM_STR);
+            $stmt->bindParam(":fecha_contracion", $datos["fecha_contracion"], PDO::PARAM_STR);
             $stmt->bindParam(":estadp", $datos["estadp"], PDO::PARAM_INT);
 
             if ($stmt->execute()) {
