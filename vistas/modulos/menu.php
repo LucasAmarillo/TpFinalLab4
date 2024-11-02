@@ -21,9 +21,8 @@
                         <img src="assets/images/logo-dark.png" alt="" height="24">
                     </span>
                 </a>
-            </div>
-
-            <ul id="side-menu">
+            </div>r
+            <ul id="side-menu" class="ml-4">
 
                 <li class="menu-title">Menu</li>
 
@@ -58,7 +57,7 @@
                         <span> Planes </span>
                     </a>
                 </li>
-                <li>
+                <li style="background-color: #ffb7bb; color: #fff; font-weight: bold;">
                     <a href="<?php echo $url; ?>salir">
                         <i data-feather="globe"></i>
                         <span> Salir </span>

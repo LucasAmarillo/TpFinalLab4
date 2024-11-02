@@ -21,6 +21,7 @@ $cantidad = count($usuarios);
                                 <th class="text-center">Nombre</th>
                                 <th class="text-center">Contraseña</th>
                                 <th class="text-center">Email</th>
+                                <th class="text-center">Estado</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
@@ -33,6 +34,24 @@ $cantidad = count($usuarios);
                                     <td class="text-center"> <?php echo $value["nombre"] ?></td>
                                     <td class="text-center"> <?php echo str_repeat('*', 5) ?></td> <!--oculta la contraseña y la limita a 5 *-->
                                     <td class="text-center"> <?php echo $value["email"] ?> </td>
+                                    <td class="text-center"
+                                        <?php
+                                        // Si el estado es 1 se pinta la celda de verda, si es 0 se pinta de rojo
+                                        if ($value["estado"] == 1) {
+                                            echo "style='background-color: #77a345; color: #FFFFFF'; font-weight: bold;";
+                                        } else {
+                                            echo "style='background-color: #FF0000; color: #FFFFFF'; font-weight: bold;";
+                                        }
+                                        ?>>
+                                        <?php
+                                        // Aca se muestra el estado con texto
+                                        if ($value["estado"] == 1) {
+                                            echo "Activo";
+                                        } else {
+                                            echo "Inactivo";
+                                        }
+                                        ?>
+                                    </td>
 
                                     <td class="text-center"><a href="editar_usuario/<?php echo $value["id_usuario"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarUsuario" id_usuario=<?php echo $value["id_usuario"]; ?>><i class="fas fa-trash"></i></button>
