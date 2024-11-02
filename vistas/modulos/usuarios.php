@@ -18,9 +18,10 @@ $cantidad = count($usuarios);
                     <table id="datatable" class="table table-bordered table-striped dt-responsive table-responsive nowrap">
                         <thead>
                             <tr>
-                                <th>Nombre</th>
-                                <th>Email</th>
-                                <th>Acciones</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Contraseña</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,10 +30,11 @@ $cantidad = count($usuarios);
                             foreach ($usuarios as $key => $value) {
                             ?>
                                 <tr style="background-color:#000888">
-                                    <td> <?php echo $value["nombre"] ?></td>
-                                    <td> <?php echo $value["email"] ?> </td>
+                                    <td class="text-center"> <?php echo $value["nombre"] ?></td>
+                                    <td class="text-center"> <?php echo str_repeat('*', 5) ?></td> <!--oculta la contraseña y la limita a 5 *-->
+                                    <td class="text-center"> <?php echo $value["email"] ?> </td>
 
-                                    <td><a href="editar_usuario/<?php echo $value["id_usuario"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <td class="text-center"><a href="editar_usuario/<?php echo $value["id_usuario"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarUsuario" id_usuario=<?php echo $value["id_usuario"]; ?>><i class="fas fa-trash"></i></button>
                                     </td>
 

@@ -1,13 +1,11 @@
 <?php
-$url = ControladorPlantilla::url();
-$entrenadores = ControladorEntrenadores::ctrMostrarEntrenadores(null, null);
+$clientes = ControladorClientes::ctrMostrarClientes(null, null);
 
-$cantidad = count($entrenadores);
+$cantidad = count($clientes);
 ?>
 <div class="row">
     <div class="col-12">
-        <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-4" alt=" entrenador"> </h1>
-
+        <h1>Clientes</h1>
         <div class="card">
 
             <div class="card-header">
@@ -23,10 +21,11 @@ $cantidad = count($entrenadores);
                                 <th class="text-center">Nombre</th>
                                 <th class="text-center">Apellido</th>
                                 <th class="text-center">DNI</th>
+                                <th class="text-center">Fecha de Nacimiento</th>
+                                <th class="text-center">Dirección</th>
                                 <th class="text-center">Telefono</th>
                                 <th class="text-center">Email</th>
-                                <th class="text-center">Especialidad</th>
-                                <th class="text-center">Fecha de contratación</th>
+                                <th class="text-center">Fecha de inscripción</th>
                                 <th class="text-center">Estado</th>
                                 <th class="text-center">Acciones</th>
                             </tr>
@@ -34,16 +33,17 @@ $cantidad = count($entrenadores);
                         <tbody>
                             <?php
 
-                            foreach ($entrenadores as $key => $value) {
+                            foreach ($clientes as $key => $value) {
                             ?>
                                 <tr style="background-color:#000888">
-                                    <td class="text-center"><?php echo $value["nombre_entrenador"]; ?></td>
-                                    <td class="text-center"><?php echo $value["apellido"]; ?></td>
-                                    <td class="text-center"><?php echo $value["dni"]; ?></td>
-                                    <td class="text-center"><?php echo $value["telefono"]; ?></td>
-                                    <td class="text-center"><?php echo $value["email"]; ?></td>
-                                    <td class="text-center"><?php echo $value["id_especialidad"]; ?></td>
-                                    <td class="text-center"><?php echo $value["fecha_contratacion"]; ?></td>
+                                    <td class="text-center"> <?php echo $value["nombre"] ?></td>
+                                    <td class="text-center"> <?php echo $value["apellido"] ?> </td>
+                                    <td class="text-center"> <?php echo $value["dni"] ?> </td>
+                                    <td class="text-center"> <?php echo date('d-m-Y', strtotime($value["fecha_nacimiento"])); ?> </td>
+                                    <td class="text-center"> <?php echo $value["direccion"] ?> </td>
+                                    <td class="text-center"> <?php echo $value["telefono"] ?> </td>
+                                    <td class="text-center"> <?php echo $value["email"] ?> </td>
+                                    <td class="text-center"> <?php echo date('d-m-Y', strtotime($value["fecha_inscripcion"])) ?> </td>
                                     <td class="text-center"
                                         <?php
                                         // Si el estado es 1 se pinta la celda de verda, si es 0 se pinta de rojo
@@ -62,11 +62,15 @@ $cantidad = count($entrenadores);
                                         }
                                         ?>
                                     </td>
-                                    <td class="text-center">
-                                        <a href="editar_entrenador/<?php echo $value["id_entrenador"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminarEntrenador" id_entrenador="<?php echo $value["id_entrenador"]; ?>"> <i class="fas fa-trash"></i></button>
+
+                                    <td class="text-center"><a href="editar_usuario/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-danger btnEliminarcliente" id_cliente=<?php echo $value["id_cliente"]; ?>><i class="fas fa-trash"></i></button>
                                     </td>
+
                                 </tr>
+
+                                <input type="hidden" id="url" value="<?php echo $url; ?>">
+
                             <?php } ?>
 
                         </tbody>
@@ -74,7 +78,7 @@ $cantidad = count($entrenadores);
                 </div>
 
             <?php } else { ?>
-                <h3>Planes no disponibles</h3>
+                <h3>Clientes no disponibles</h3>
             <?php } ?>
 
         </div>

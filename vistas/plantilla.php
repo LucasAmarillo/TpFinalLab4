@@ -4,7 +4,7 @@ $url = ControladorPlantilla::url();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -85,6 +85,7 @@ $url = ControladorPlantilla::url();
                         $rutas[0] == "home" ||
                         $rutas[0] == "usuarios" ||
                         $rutas[0] == "entrenadores" ||
+                        $rutas[0] == "clientes" ||
                         $rutas[0] == "planes" ||
                         $rutas[0] == "editar_plan" ||
                         $rutas[0] == "salir"

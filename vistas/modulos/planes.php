@@ -19,13 +19,13 @@ $cantidad = count($planes);
                     <table id="datatable" class="table table-bordered table-striped dt-responsive table-responsive nowrap">
                         <thead>
                             <tr>
-                                <th>Codigo</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th>Duracion(Semanas)</th>
-                                <th>Cantidad de sesiones</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
+                                <th class="text-center">Codigo</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-center">Descripción</th>
+                                <th class="text-center">Duracion(Semanas)</th>
+                                <th class="text-center">Cantidad de sesiones</th>
+                                <th class="text-center">Estado</th>
+                                <th class="text-center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,13 +34,30 @@ $cantidad = count($planes);
                             foreach ($planes as $key => $value) {
                             ?>
                                 <tr style="background-color:#000888">
-                                    <td><?php echo $value["codigo"]; ?></td>
-                                    <td><?php echo $value["nombre_plan"]; ?></td>
-                                    <td><?php echo $value["descripcion"]; ?></td>
-                                    <td><?php echo $value["duracion"]; ?></td>
-                                    <td><?php echo $value["cantidad_sesiones"]; ?></td>
-                                    <td><?php echo ($value["estado"] == 1) ? "Activo" : "Inactivo"; ?></td>
-                                    <td>
+                                    <td class="text-center"><?php echo $value["codigo"]; ?></td>
+                                    <td class="text-center"><?php echo $value["nombre_plan"]; ?></td>
+                                    <td class="text-center"><?php echo $value["descripcion"]; ?></td>
+                                    <td class="text-center"><?php echo $value["duracion"]; ?></td>
+                                    <td class="text-center"><?php echo $value["cantidad_sesiones"]; ?></td>
+                                    <td class="text-center"
+                                        <?php
+                                        // Si el estado es 1 se pinta la celda de verda, si es 0 se pinta de rojo
+                                        if ($value["estado"] == 1) {
+                                            echo "style='background-color: #77a345; color: #FFFFFF'; font-weight: bold;";
+                                        } else {
+                                            echo "style='background-color: #FF0000; color: #FFFFFF'; font-weight: bold;";
+                                        }
+                                        ?>>
+                                        <?php
+                                        // Aca se muestra el estado con texto
+                                        if ($value["estado"] == 1) {
+                                            echo "Activo";
+                                        } else {
+                                            echo "Inactivo";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td class="text-center">
                                         <a href="editar_plan/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarPlan" id_plan="<?php echo $value["id_plan"]; ?>"> <i class="fas fa-trash"></i></button>
                                     </td>

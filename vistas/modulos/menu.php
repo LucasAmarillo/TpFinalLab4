@@ -47,6 +47,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo $url; ?>clientes">
+                        <i data-feather="globe"></i>
+                        <span> Clientes </span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo $url; ?>planes">
                         <i data-feather="globe"></i>
                         <span> Planes </span>
