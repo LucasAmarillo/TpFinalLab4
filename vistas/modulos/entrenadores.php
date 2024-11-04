@@ -2,6 +2,10 @@
 $url = ControladorPlantilla::url();
 $entrenadores = ControladorEntrenadores::ctrMostrarEntrenadores(null, null);
 
+// echo "<pre>";
+// print_r($entrenadores);
+// echo "</pre>";
+
 $cantidad = count($entrenadores);
 ?>
 <div class="row">
@@ -42,7 +46,7 @@ $cantidad = count($entrenadores);
                                     <td class="text-center"><?php echo $value["dni"]; ?></td>
                                     <td class="text-center"><?php echo $value["telefono"]; ?></td>
                                     <td class="text-center"><?php echo $value["email"]; ?></td>
-                                    <td class="text-center"><?php echo $value["id_especialidad"]; ?></td>
+                                    <td class="text-center"><?php echo $value["tipo"]; ?></td>
                                     <td class="text-center"><?php echo $value["fecha_contratacion"]; ?></td>
                                     <td class="text-center"
                                         <?php
@@ -74,7 +78,7 @@ $cantidad = count($entrenadores);
                 </div>
 
             <?php } else { ?>
-                <h3>Planes no disponibles</h3>
+                <h3>Entrenadores no disponibles</h3>
             <?php } ?>
 
         </div>

@@ -93,10 +93,15 @@ $url = ControladorPlantilla::url();
                     if (
                         $rutas[0] == "home" ||
                         $rutas[0] == "usuarios" ||
+                        $rutas[0] == "editar_usuarios" ||
                         $rutas[0] == "entrenadores" ||
+                        $rutas[0] == "editar_entrenador" ||
                         $rutas[0] == "clientes" ||
+                        $rutas[0] == "editar_cliente" ||
                         $rutas[0] == "planes" ||
                         $rutas[0] == "editar_plan" ||
+                        $rutas[0] == "pagos" ||
+                        $rutas[0] == "editar_pagos" ||
                         $rutas[0] == "salir"
                     ) {
 

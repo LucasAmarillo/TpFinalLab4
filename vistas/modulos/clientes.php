@@ -1,5 +1,8 @@
 <?php
 $clientes = ControladorClientes::ctrMostrarClientes(null, null);
+// echo "<pre>";
+// print_r($clientes);
+// echo "</pre>";
 
 $cantidad = count($clientes);
 ?>
@@ -25,6 +28,7 @@ $cantidad = count($clientes);
                                 <th class="text-center">Dirección</th>
                                 <th class="text-center">Telefono</th>
                                 <th class="text-center">Email</th>
+                                <th class="text-center">Plan</th>
                                 <th class="text-center">Fecha de inscripción</th>
                                 <th class="text-center">Estado</th>
                                 <th class="text-center">Acciones</th>
@@ -43,6 +47,7 @@ $cantidad = count($clientes);
                                     <td class="text-center"> <?php echo $value["direccion"] ?> </td>
                                     <td class="text-center"> <?php echo $value["telefono"] ?> </td>
                                     <td class="text-center"> <?php echo $value["email"] ?> </td>
+                                    <td class="text-center"> <?php echo $value["plan"] ?> </td>
                                     <td class="text-center"> <?php echo date('d-m-Y', strtotime($value["fecha_inscripcion"])) ?> </td>
                                     <td class="text-center"
                                         <?php
@@ -63,7 +68,7 @@ $cantidad = count($clientes);
                                         ?>
                                     </td>
 
-                                    <td class="text-center"><a href="editar_usuario/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <td class="text-center"><a href="editar_cliente/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarcliente" id_cliente=<?php echo $value["id_cliente"] ?>><i class="fas fa-trash"></i></button>
                                     </td>
 

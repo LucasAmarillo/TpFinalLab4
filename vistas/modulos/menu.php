@@ -57,6 +57,12 @@
                         <span> Planes </span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo $url; ?>pagos">
+                        <i data-feather="globe"></i>
+                        <span> Pagos </span>
+                    </a>
+                </li>
                 <li style="background-color: #ffb7bb; color: #fff; font-weight: bold;">
                     <a href="<?php echo $url; ?>salir">
                         <i data-feather="globe"></i>
