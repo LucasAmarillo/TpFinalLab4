@@ -52,33 +52,33 @@ class ControladorPlanes
     /*=============================================
 EDITAR DATOS
 =============================================*/
-    public function ctrEditarPlan()
-    {
-        $tabla = "plan_entrenamiento";
-        if (isset($_POST["id_plan"])) {
-            $datos = array(
-                "nombre" => $_POST["nombre"],
-                "codigo" => $_POST["codigo"],
-                "descripcion" => $_POST["descripcion"],
-                "duracion" => $_POST["duracion"],
-                "cantidad_sesiones" => $_POST["cantidad_sesiones"],
-                "estado" => $_POST["estado"],
+    // public function ctrEditarPlan()
+    // {
+    //     $tabla = "plan_entrenamiento";
+    //     if (isset($_POST["id_plan"])) {
+    //         $datos = array(
+    //             "nombre" => $_POST["nombre"],
+    //             "codigo" => $_POST["codigo"],
+    //             "descripcion" => $_POST["descripcion"],
+    //             "duracion" => $_POST["duracion"],
+    //             "cantidad_sesiones" => $_POST["cantidad_sesiones"],
+    //             "estado" => $_POST["estado"],
 
-            );
-            $url = ControladorPlantilla::url() . "planes";
+    //         );
+    //         $url = ControladorPlantilla::url() . "planes";
 
-            $respuesta = ModeloPlanes::mdlEditarPlan($tabla, $datos);
-            if ($respuesta == "ok") {
-                echo '<script>
-                fncSweetAlert(
-                "success",
-                "El plan se actualizó correctamente",
-                "' . $url . '"
-                );
-                </script>';
-            }
-        }
-    }
+    //         $respuesta = ModeloPlanes::mdlEditarPlanes($tabla, $datos);
+    //         if ($respuesta == "ok") {
+    //             echo '<script>
+    //             fncSweetAlert(
+    //             "success",
+    //             "El plan se actualizó correctamente",
+    //             "' . $url . '"
+    //             );
+    //             </script>';
+    //         }
+    //     }
+    // }
 
     /*=============================================
 ELIMINAR VERRRR

@@ -19,7 +19,9 @@ class ModeloPlanes
             }
         } else {
             try {
-                $planes = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre nombre_plan, p.descripcion, p.duracion, p.cantidad_sesiones, p.id_entrenador, p.estado, e.nombre, e.apellido FROM planes p INNER JOIN entrenadores e ON p.id_entrenador = e.id_entrenador");
+                // $planes = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre nombre_plan, p.descripcion, p.duracion, p.cantidad_sesiones, p.id_entrenador, p.estado, e.nombre, e.apellido FROM planes p INNER JOIN entrenadores e ON p.id_entrenador = e.id_entrenador");
+                $planes = Conexion::conectar()->prepare("SELECT * FROM planes p");
+
                 $planes->execute();
 
                 return $planes->fetchAll(PDO::FETCH_ASSOC);

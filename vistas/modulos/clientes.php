@@ -1,5 +1,6 @@
 <?php
 $clientes = ControladorClientes::ctrMostrarClientes(null, null);
+// $plan = ControladorPlanes::ctrMostrarPlanes(null, null);
 // echo "<pre>";
 // print_r($clientes);
 // echo "</pre>";
@@ -12,7 +13,7 @@ $cantidad = count($clientes);
         <div class="card">
 
             <div class="card-header">
-                <a href="agregar_producto" class="btn btn-info">Agregar</a>
+                <a href="agregar_cliente" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
             <?php if ($cantidad > 0) { ?>

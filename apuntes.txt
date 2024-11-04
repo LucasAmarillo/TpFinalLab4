@@ -1,0 +1,8 @@
+.htaccess
+RewriteEngine On // Habilitamos la sobreescritura del servidor
+Options ALL -Indexes// ocultar las carpetas 
+//url amigables, tiene exprecion regulare en los parentesis
+RewriteRule ^(.+)$ index.php?pagina=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
