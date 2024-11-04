@@ -5,8 +5,8 @@ $cantidad = count($usuarios);
 ?>
 <div class="row">
     <div class="col-12">
-        <h1>Usuarios</h1>
         <div class="card">
+            <h1 class="text-center mt-3">Usuarios</h1>
 
             <div class="card-header">
                 <a href="agregar_producto" class="btn btn-info">Agregar</a>

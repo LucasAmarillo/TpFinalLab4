@@ -10,9 +10,8 @@ $cantidad = count($entrenadores);
 ?>
 <div class="row">
     <div class="col-12">
-        <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-4" alt=" entrenador"> </h1>
-
         <div class="card">
+            <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-4" alt=" entrenador"> </h1>
 
             <div class="card-header">
                 <a href="agregar_producto" class="btn btn-info">Agregar</a>

@@ -1,13 +1,15 @@
 <?php
 $url = ControladorPlantilla::url();
 $planes = ControladorPlanes::ctrMostrarPlanes(null, null);
-
+// echo "<pre>";
+// print_r($planes);
+// echo "</pre>";
 $cantidad = count($planes);
 ?>
 <div class="row">
     <div class="col-12">
-        <h1 class="text-center mt-3">Planes de entrenamiento <img src="<?php echo $url; ?>vistas/assets/img/plan.png" style="width: 3%;" class="mt-1" alt="planes"></h1>
         <div class="card">
+            <h1 class="text-center mt- 3">Planes de entrenamiento <img src="<?php echo $url; ?>vistas/assets/img/plan.png" style="width: 3%;" class="mt-1" alt="planes"></h1>
 
             <div class="card-header">
                 <a href="agregar_producto" class="btn btn-info">Agregar</a>
@@ -35,7 +37,7 @@ $cantidad = count($planes);
                             ?>
                                 <tr style="background-color:#000888">
                                     <td class="text-center"><?php echo $value["codigo"]; ?></td>
-                                    <td class="text-center"><?php echo $value["nombre_plan"]; ?></td>
+                                    <td class="text-center"><?php echo $value["nombre"]; ?></td>
                                     <td class="text-center"><?php echo $value["descripcion"]; ?></td>
                                     <td class="text-center"><?php echo $value["duracion"]; ?></td>
                                     <td class="text-center"><?php echo $value["cantidad_sesiones"]; ?></td>

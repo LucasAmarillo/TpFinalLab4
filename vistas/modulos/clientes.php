@@ -8,9 +8,9 @@ $clientes = ControladorClientes::ctrMostrarClientes(null, null);
 $cantidad = count($clientes);
 ?>
 <div class="row">
-    <div class="col-12">
-        <h1>Clientes</h1>
+    <div class="col-12 ">
         <div class="card">
+            <h1 class="text-center mt-3">Clientes</h1>
 
             <div class="card-header">
                 <a href="agregar_cliente" class="btn btn-info">Agregar</a>
