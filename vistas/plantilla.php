@@ -87,9 +87,6 @@ $url = ControladorPlantilla::url();
 
                     $rutas = explode('/', $_GET["pagina"]);
 
-                    // echo "<pre>";
-                    // print_r($rutas);
-                    // echo "</pre>";
                     if (
                         $rutas[0] == "home" ||
                         $rutas[0] == "usuarios" ||
@@ -97,15 +94,15 @@ $url = ControladorPlantilla::url();
                         $rutas[0] == "entrenadores" ||
                         $rutas[0] == "editar_entrenador" ||
                         $rutas[0] == "clientes" ||
-                        $rutas[0] == "agregar_cliente" ||
-                        $rutas[0] == "editar_cliente" ||
+                        $rutas[0] == "cliente_agregar" ||
+                        $rutas[0] == "cliente_editar" ||
                         $rutas[0] == "planes" ||
-                        $rutas[0] == "editar_plan" ||
+                        $rutas[0] == "plan_agregar" ||
+                        $rutas[0] == "plan_editar" ||
                         $rutas[0] == "pagos" ||
                         $rutas[0] == "editar_pagos" ||
                         $rutas[0] == "salir"
                     ) {
-
                         include "vistas/modulos/" . $rutas[0] . ".php";
                     } else {
 

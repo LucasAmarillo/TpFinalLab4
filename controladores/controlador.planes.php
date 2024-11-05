@@ -13,72 +13,73 @@ class ControladorPlanes
 
     //agregar Planes VERRRR
 
-    // public function ctrAgregarPlan()
-    // {
-    //     if (isset($_POST["nombre"])) {
+    static public function ctrAgregarPlan()
+    {
+        if (isset($_POST["nombre"])) {
 
-    //         $tabla = "planes"; //nombre de la tabla
+            $tabla = "planes"; //nombre de la tabla
 
-    //         $datos = array(
-    //             "nombre" => $_POST["nombre"],
-    //             "codigo" => $_POST["codigo"],
-    //             "descripcion" => $_POST["descripcion"],
-    //             "duracion" => $_POST["duracion"],
-    //             "cantidad_sesiones" => $_POST["cantidad_sesiones"],
-    //             "estado" => $_POST["estado"],
-    //         );
+            $datos = array(
+                "codigo" => $_POST["codigo"],
+                "nombre" => $_POST["nombre"],
+                "descripcion" => $_POST["descripcion"],
+                "duracion" => $_POST["duracion"],
+                "cantidad_sesiones" => $_POST["cantidad_sesiones"],
+                "id_entrenador" => $_POST["id_entrenador"],
+                "estado" => $_POST["estado"],
+            );
 
-    //         //print_r($datos);
+            // print_r($datos);
 
-    //         //return;
+            // return;
 
-    //         //podemos volver a la página de datos
+            //podemos volver a la página de datos
 
-    //         $url = ControladorPlantilla::url() . "planes";
-    //         $respuesta = ModeloPlanes::mdlAgregarPlan($tabla, $datos);
+            $url = ControladorPlantilla::url() . "planes";
+            $respuesta = ModeloPlanes::mdlAgregarPlan($tabla, $datos);
 
-    //         if ($respuesta == "ok") {
-    //             echo '<script>
-    //                 fncSweetAlert(
-    //                 "success",
-    //                 "El plan se agregó correctamente",
-    //                 "' . $url . '"
-    //                 );
-    //                 </script>';
-    //         }
-    //     }
-    // }
+            if ($respuesta == "ok") {
+                echo '<script>
+                    fncSweetAlert(
+                    "success",
+                    "El plan se agregó correctamente",
+                    "' . $url . '"
+                    );
+                    </script>';
+            }
+        }
+    }
 
     /*=============================================
 EDITAR DATOS
 =============================================*/
-    // public function ctrEditarPlan()
-    // {
-    //     $tabla = "plan_entrenamiento";
-    //     if (isset($_POST["id_plan"])) {
-    //         $datos = array(
-    //             "nombre" => $_POST["nombre"],
-    //             "codigo" => $_POST["codigo"],
-    //             "descripcion" => $_POST["descripcion"],
-    //             "duracion" => $_POST["duracion"],
-    //             "cantidad_sesiones" => $_POST["cantidad_sesiones"],
-    //             "estado" => $_POST["estado"],
+    static public function ctrEditarPlan()
+    {
+        $tabla = "plan_entrenamiento";
+        if (isset($_POST["id_plan"])) {
+            $datos = array(
+                "nombre" => $_POST["nombre"],
+                "codigo" => $_POST["codigo"],
+                "descripcion" => $_POST["descripcion"],
+                "duracion" => $_POST["duracion"],
+                "cantidad_sesiones" => $_POST["cantidad_sesiones"],
+                "estado" => $_POST["estado"],
 
-    //         );
-    //         $url = ControladorPlantilla::url() . "planes";
+            );
+            $url = ControladorPlantilla::url() . "planes";
 
-    //         $respuesta = ModeloPlanes::mdlEditarPlanes($tabla, $datos);
-    //         if ($respuesta == "ok") {
-    //             echo '<script>
-    //             fncSweetAlert(
-    //             "success",
-    //             "El plan se actualizó correctamente",
-    //             "' . $url . '"
-    //             );
-    //             </script>';
-    //         }
-    //     }
-    // }
+            $respuesta = ModeloPlanes::mdlEditarPlan($tabla, $datos);
+            if ($respuesta == "ok") {
+                echo '<script>
+                fncSweetAlert(
+                "success",
+                "El plan se actualizó correctamente",
+                "' . $url . '"
+                );
+                </script>';
+            }
+        }
+    }
 
     /*=============================================
 ELIMINAR VERRRR

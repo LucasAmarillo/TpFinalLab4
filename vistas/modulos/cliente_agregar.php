@@ -1,6 +1,5 @@
 <?php
 
-
 $plan = ControladorPlanes::ctrMostrarPlanes(null, null);
 
 // print_r($plan); verifica si vienen datos 
@@ -80,7 +79,10 @@ $plan = ControladorPlanes::ctrMostrarPlanes(null, null);
                 $agregar->ctrAgregarCliente();
                 ?>
 
-                <div class="mb-3 col-4 mx-auto text-center">
+                <div class="mt-2 col-4 mx-auto text-center">
+                    <a href="<?php echo $url; ?>/index.php?pagina=clientes" class="btn btn-secondary">
+                        <i class="fa-solid fa-arrow-left"></i> Regresar
+                    </a>
                     <button class="btn btn-info btnEditaCliente justify-content-center" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
                 </div>
 

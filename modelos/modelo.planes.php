@@ -48,4 +48,28 @@ class ModeloPlanes
             return "Error: " . $e->getMessage();
         }
     }
+    static public function mdlAgregarPlan($tabla, $datos)
+    {
+
+        try {
+            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, nombre, descripcion, duracion, cantidad_sesiones, id_entrenador, estado) VALUES(:nombre, :codigo, :descripcion, :duracion, :cantidad_sesiones, :id_entrenador, :estado)");
+
+            $stmt->bindParam(":codigo", $datos["codigo"], PDO::PARAM_STR);
+            $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+            $stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
+            $stmt->bindParam(":duracion", $datos["duracion"], PDO::PARAM_INT);
+            $stmt->bindParam(":cantidad_sesiones", $datos["cantidad_sesiones"], PDO::PARAM_INT);
+            $stmt->bindParam(":id_entrenador", $datos["id_entrenador"], PDO::PARAM_INT);
+            $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
+
+            // echo "<pre>";
+            // print_r($datos);
+            // echo "</pre>";
+            // // return;
+            $stmt->execute();
+            return "ok";
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }

@@ -13,7 +13,7 @@ $cantidad = count($clientes);
             <h1 class="text-center mt-3">Clientes</h1>
 
             <div class="card-header">
-                <a href="agregar_cliente" class="btn btn-info">Agregar</a>
+                <a href="cliente_agregar" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
             <?php if ($cantidad > 0) { ?>
@@ -69,7 +69,7 @@ $cantidad = count($clientes);
                                         ?>
                                     </td>
 
-                                    <td class="text-center"><a href="editar_cliente/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                    <td class="text-center"><a href="cliente_editar/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarcliente" id_cliente=<?php echo $value["id_cliente"] ?>><i class="fas fa-trash"></i></button>
                                     </td>
 

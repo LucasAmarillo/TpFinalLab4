@@ -1,6 +1,6 @@
 <?php
 
-use PSpell\Config;
+// use PSpell\Config;
 
 require_once 'conexion.php';
 
@@ -62,6 +62,7 @@ class ModeloClientes
             $stmt->bindParam(":fecha_inscripcion", $datos["fecha_inscripcion"], PDO::PARAM_STR);
             $stmt->bindParam(":id_plan", $datos["id_plan"], PDO::PARAM_INT);
             $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
+
             // echo "<pre>";
             // print_r($datos);
             // echo "</pre>";

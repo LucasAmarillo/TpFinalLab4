@@ -59,4 +59,30 @@ class ModeloEntrenadores
             return "Error: " . $e->getMessage();
         }
     }
+    static public function mdlAgregarEntrenador($tabla, $datos)
+    {
+
+        try {
+            $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, apellido, dni, fecha_nacimiento, direccion, telefono, email, fecha_inscripcion, id_plan, estado)VALUES(:nombre, :apellido, :dni, :fecha_nacimiento, :direccion, :telefono, :email, :fecha_inscripcion, :id_plan, :estado)");
+
+            $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+            $stmt->bindParam(":apellido", $datos["apellido"], PDO::PARAM_STR);
+            $stmt->bindParam(":dni", $datos["dni"], PDO::PARAM_STR);
+            $stmt->bindParam(":fecha_nacimiento", $datos["fecha_nacimiento"], PDO::PARAM_STR);
+            $stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
+            $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+            $stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
+            $stmt->bindParam(":fecha_inscripcion", $datos["fecha_inscripcion"], PDO::PARAM_STR);
+            $stmt->bindParam(":id_plan", $datos["id_plan"], PDO::PARAM_INT);
+            $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
+            // echo "<pre>";
+            // print_r($datos);
+            // echo "</pre>";
+            // return;
+            $stmt->execute();
+            return "ok";
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }
