@@ -11,6 +11,9 @@ require_once 'modelos/entrenadores.modelo.php';
 require_once 'controladores/especialidades.controlador.php';
 require_once 'modelos/especialidades.modelo.php';
 
+require_once 'controladores/especialidades.controlador.php';
+require_once 'modelos/especialidades.modelo.php';
+
 require_once 'controladores/planes.controlador.php';
 require_once 'modelos/planes.modelo.php';
 
