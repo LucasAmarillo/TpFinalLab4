@@ -33,12 +33,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>usuarios">
-                        <i data-feather="aperture"></i>
-                        <span> Usuarios </span>
+                    <a href="<?php echo $url; ?>clientes">
+                        <i data-feather="globe"></i>
+                        <span> Clientes </span>
                     </a>
                 </li>
-
                 <li>
                     <a href="<?php echo $url; ?>entrenadores">
                         <i data-feather="globe"></i>
@@ -46,9 +45,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>clientes">
+                    <a href="<?php echo $url; ?>especialidades">
                         <i data-feather="globe"></i>
-                        <span> Clientes </span>
+                        <span> Especialidades </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo $url; ?>pagos">
+                        <i data-feather="globe"></i>
+                        <span> Pagos </span>
                     </a>
                 </li>
                 <li>
@@ -58,9 +63,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>pagos">
-                        <i data-feather="globe"></i>
-                        <span> Pagos </span>
+                    <a href="<?php echo $url; ?>usuarios">
+                        <i data-feather="aperture"></i>
+                        <span> Usuarios </span>
                     </a>
                 </li>
                 <li style="background-color: #ffb7bb; color: #fff; font-weight: bold;">

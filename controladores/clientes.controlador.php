@@ -26,6 +26,8 @@ class ControladorClientes
                 "estado" => $_POST["estado"]
 
             );
+
+
             $url = ControladorPlantilla::url() . "clientes";
 
             $respuesta = ModeloClientes::mdlEditarCliente($tabla, $datos);
@@ -72,12 +74,12 @@ class ControladorClientes
             }
         }
     }
-    // static public function ctrEliminarCliente()
-    // {
-    //     if (isset($_POST["id_cliente"])) {
-    //         $clienteId = $_POST["id_cliente"];
-    //         $respuesta = ModeloClientes::mdlEliminarCliente("clientes", $clienteId);
-    //         echo $respuesta;
-    //     }
-    // }
+    static public function ctrEliminarCliente()
+    {
+        if (isset($_POST["id_cliente"])) {
+            $clienteId = $_POST["id_cliente"];
+            $respuesta = ModeloClientes::mdlEliminarCliente("clientes", $clienteId);
+            echo $respuesta;
+        }
+    }
 }

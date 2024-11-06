@@ -5,6 +5,7 @@ $entrenadores = ControladorEntrenadores::ctrMostrarEntrenadores(null, null);
 // echo "<pre>";
 // print_r($entrenadores);
 // echo "</pre>";
+// return;
 
 $cantidad = count($entrenadores);
 ?>
@@ -14,7 +15,7 @@ $cantidad = count($entrenadores);
             <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-4" alt=" entrenador"> </h1>
 
             <div class="card-header">
-                <a href="agregar_producto" class="btn btn-info">Agregar</a>
+                <a href="entrenadores_agregar" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
             <?php if ($cantidad > 0) { ?>
@@ -45,8 +46,10 @@ $cantidad = count($entrenadores);
                                     <td class="text-center"><?php echo $value["dni"]; ?></td>
                                     <td class="text-center"><?php echo $value["telefono"]; ?></td>
                                     <td class="text-center"><?php echo $value["email"]; ?></td>
-                                    <td class="text-center"><?php echo $value["tipo"]; ?></td>
-                                    <td class="text-center"><?php echo $value["fecha_contratacion"]; ?></td>
+                                    <td class="text-center"><?php echo $value["nombre_especialidad"]; ?>
+                                        <a href="detalle_entrenador/<?php echo $value["id_entrenador"] ?>" class="btn btn-success" style="float: right;, margin-left: 5px"><i class="fas fa-plus"></i></a>
+                                    </td>
+                                    <td class="text-center"><?php echo date("d/m/Y", strtotime($value["fecha_contratacion"])); ?></td>
                                     <td class="text-center"
                                         <?php
                                         // Si el estado es 1 se pinta la celda de verda, si es 0 se pinta de rojo
@@ -66,7 +69,7 @@ $cantidad = count($entrenadores);
                                         ?>
                                     </td>
                                     <td class="text-center">
-                                        <a href="editar_entrenador/<?php echo $value["id_entrenador"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="entrenadores_editar/<?php echo $value["id_entrenador"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarEntrenador" id_entrenador="<?php echo $value["id_entrenador"]; ?>"> <i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>

@@ -21,12 +21,17 @@ class ControladorEntrenadores
                 "direccion" => $_POST["direccion"],
                 "telefono" => $_POST["telefono"],
                 "email" => $_POST["email"],
-                "id_plan" => $_POST["id_plan"],
                 "fecha_inscripcion" => $_POST["fecha_inscripcion"],
                 "estado" => $_POST["estado"]
 
             );
-            $url = ControladorPlantilla::url() . "clientes";
+
+            echo "<pre>";
+            print_r($datos);
+            echo "</pre>";
+            //            return;
+
+            $url = ControladorPlantilla::url() . "entrenadores";
 
             $respuesta = ModeloEntrenadores::mdlEditarEntrenador($tabla, $datos);
             if ($respuesta == "ok") {

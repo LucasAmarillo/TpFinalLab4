@@ -10,7 +10,7 @@ $entrenador = ControladorEntrenadores::ctrMostrarEntrenadores(null, null);
     <div class="card">
 
         <div class="card-header mx-auto">
-            <h2 class=" mb-0">Agregar plan <img src="<?php echo $url; ?>vistas/assets/img/mancuerna.png" alt="Editar cliente" style="margin-left: 20px; width: 100px; vertical-align: middle;"></h2>
+            <h2 class=" mb-0">Agregar usuario <img src="<?php echo $url; ?>vistas/assets/img/mancuerna.png" alt="Editar cliente" style="margin-left: 20px; width: 100px; vertical-align: middle;"></h2>
         </div><!-- end card header -->
 
         <div class="card-body">

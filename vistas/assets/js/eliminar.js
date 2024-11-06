@@ -1,4 +1,4 @@
-$(document).on("click", ".btnEliminarCliente", function () {
+$(document).on("click", ".btnEliminar", function () {
   let id_cliente = $(this).attr("id_cliente");
 
   console.log(id_cliente);

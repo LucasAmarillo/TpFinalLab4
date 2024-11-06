@@ -9,7 +9,7 @@ class ModeloPlanes
     {
         if ($item != null) {
             try {
-                $stmt = Conexion::conectar()->prepare("SELECT p.id_plan, p.codigo, p.nombre as plan, p.descripcion, p.duracion, p.cantidad_sesiones, p.id_entrenador, p.estado, e.id_entrenador, e.nombre as entrenador_nombre, e.apellido as entrenador_apellido FROM planes p, entrenadores e WHERE $item = :$item");
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM planes WHERE $item = :$item");
                 $stmt->bindParam(":" . $item, $valor,  PDO::PARAM_INT); //
                 $stmt->execute();
 

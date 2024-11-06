@@ -12,7 +12,7 @@ $cantidad = count($planes);
             <h1 class="text-center mt- 3">Planes de entrenamiento <img src="<?php echo $url; ?>vistas/assets/img/plan.png" style="width: 3%;" class="mt-1" alt="planes"></h1>
 
             <div class="card-header">
-                <a href="plan_agregar" class="btn btn-info">Agregar</a>
+                <a href="planes_agregar" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
             <?php if ($cantidad > 0) { ?>
@@ -60,7 +60,7 @@ $cantidad = count($planes);
                                         ?>
                                     </td>
                                     <td class="text-center">
-                                        <a href="plan_editar/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="planes_editar/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminarPlan" id_plan="<?php echo $value["id_plan"]; ?>"> <i class="fas fa-trash"></i></button>
                                     </td>
 

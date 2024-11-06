@@ -89,18 +89,26 @@ $url = ControladorPlantilla::url();
 
                     if (
                         $rutas[0] == "home" ||
-                        $rutas[0] == "usuarios" ||
-                        $rutas[0] == "editar_usuarios" ||
-                        $rutas[0] == "entrenadores" ||
-                        $rutas[0] == "editar_entrenador" ||
                         $rutas[0] == "clientes" ||
-                        $rutas[0] == "cliente_agregar" ||
-                        $rutas[0] == "cliente_editar" ||
-                        $rutas[0] == "planes" ||
-                        $rutas[0] == "plan_agregar" ||
-                        $rutas[0] == "plan_editar" ||
+                        $rutas[0] == "clientes_agregar" ||
+                        $rutas[0] == "clientes_editar" ||
+                        $rutas[0] == "entrenadores" ||
+                        $rutas[0] == "entrenadores_agregar" ||
+                        $rutas[0] == "entrenadores_detalle" ||
+                        $rutas[0] == "entrenadores_editar" ||
+                        $rutas[0] == "especialidades" ||
+                        $rutas[0] == "especialidades_agregar" ||
+                        $rutas[0] == "especialidades_editar" ||
                         $rutas[0] == "pagos" ||
-                        $rutas[0] == "editar_pagos" ||
+                        $rutas[0] == "pagos_agregar" ||
+                        $rutas[0] == "pagos_editar" ||
+                        $rutas[0] == "pagos_detalle" ||
+                        $rutas[0] == "planes" ||
+                        $rutas[0] == "planes_agregar" ||
+                        $rutas[0] == "planes_editar" ||
+                        $rutas[0] == "usuarios" ||
+                        $rutas[0] == "usuarios_agregar" ||
+                        $rutas[0] == "usuarios_editar" ||
                         $rutas[0] == "salir"
                     ) {
                         include "vistas/modulos/" . $rutas[0] . ".php";

@@ -9,9 +9,8 @@ class ModeloEntrenadores
     {
         if ($item != null) {
             try {
-                $stmt = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre as nombre_entrenador, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contratacion, e.estado, es.id_especialidad, es.nombre as tipo FROM entrenadores e, especialidades as es WHERE e.id_entrenador = :id_entrenador LIMIT 1");
-                // $stmt = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contratacion, e.estado FROM entrenadores e WHERE $item = :$item limit 1");
-                $stmt->bindParam(":id_entrenador", $valor,  PDO::PARAM_INT);
+                $stmt = Conexion::conectar()->prepare("SELECT * FROM entrenadores WHERE $item = :$item");
+                $stmt->bindParam(":" . $item, $valor, PDO::PARAM_INT);
                 $stmt->execute();
 
                 return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -19,17 +18,13 @@ class ModeloEntrenadores
                 return "Error: " . $e->getMessage();
             }
         } else {
-            // try {
-            //     $entrenadores = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre as nombre_entrenador, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contratacion, e.estado, es.nombre FROM entrenadores e INNER JOIN especialidades es ON e.id_entrenador = es.id_entrenador");
-            //     $entrenadores->execute();
-
-            //     return $entrenadores->fetchAll(PDO::FETCH_ASSOC);
-            // } catch (Exception $e) {
-            //     return "Error: " . $e->getMessage();
-            // }
             try {
-                // Corrige la unión de tablas
-                $entrenadores = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre as nombre_entrenador, e.apellido, e.dni, e.telefono, e.email, e.id_especialidad, e.fecha_contratacion, e.estado, es.nombre as tipo FROM entrenadores e INNER JOIN especialidades es ON e.id_especialidad = es.id_especialidad");
+                $entrenadores = Conexion::conectar()->prepare("SELECT e.id_entrenador, e.nombre as nombre_entrenador, e.apellido, e.dni, e.telefono, 
+		            e.email, e.fecha_contratacion, e.estado, e2.id_especialidad, e2.nombre AS nombre_especialidad
+                    FROM entrenadores e
+                    INNER JOIN entrenador_especialidad es ON e.id_entrenador = es.id_entrenador
+                    INNER JOIN especialidades e2 ON es.id_especialidad = e2.id_especialidad
+                    GROUP BY e.id_entrenador");
                 $entrenadores->execute();
 
                 return $entrenadores->fetchAll(PDO::FETCH_ASSOC);

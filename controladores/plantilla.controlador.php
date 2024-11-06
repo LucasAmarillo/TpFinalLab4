@@ -1,15 +1,18 @@
 <?php
 
-class ControladorPlantilla{
+class ControladorPlantilla
+{
 
-    public function ctrMostrarPlantilla(){
+    public function ctrMostrarPlantilla()
+    {
 
         include 'vistas/plantilla.php';
     }
 
     //url del sistema
 
-    static public function url(){
+    static public function url()
+    {
 
         return "http://localhost/sistema/";
     }
