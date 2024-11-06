@@ -80,26 +80,22 @@ EDITAR DATOS
             }
         }
     }
+    static public function ctrEliminarPlan()
+    {
 
-    /*=============================================
-ELIMINAR VERRRR
-=============================================*/
-    // static public function ctrEliminarPlan()
-    // {
+        if (isset($_GET["id_plan"])) {
 
-    //     if (isset($_GET["id_plan_eliminar"])) {
+            $url = ControladorPlantilla::url() . "planes";
+            $tabla = "planes";
+            $dato = $_GET["id_plan"];
 
-    //         $url = ControladorPlantilla::url() . "planes";
-    //         $tabla = "plan_entrenamiento";
-    //         $dato = $_GET["id_plan_eliminar"];
+            $respuesta = ModeloPlanes::mdlEliminarPlan($tabla, $dato);
 
-    //         $respuesta = ModeloPlanes::mdlEliminarPlan($tabla, $dato);
-
-    //         if ($respuesta == "ok") {
-    //             echo '<script>
-    //             fncSweetAlert("success", "El plan se eliminó correctamente", "' . $url . '");
-    //             </script>';
-    //         }
-    //     }
-    // }
+            if ($respuesta == "ok") {
+                echo '<script>
+                fncSweetAlert("success", "El plan se eliminó correctamente", "' . $url . '");
+                </script>';
+            }
+        }
+    }
 }

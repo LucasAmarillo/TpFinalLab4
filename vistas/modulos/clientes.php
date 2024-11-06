@@ -73,7 +73,7 @@ $cantidad = count($clientes);
                                     <td><a href="clientes_editar/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
 
                                         <button
-                                            class="btn btn-danger btnEliminar" data-id="1" data-modulo="cliente"
+                                            class="btn btn-danger btnEliminar" data-id="<?php echo $value["id_cliente"]; ?>" data-modulo="cliente"
                                             id_cliente=<?php echo $value["id_cliente"]; ?>><i class="fas fa-trash"></i></button>
                                     </td>
 

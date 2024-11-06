@@ -61,7 +61,7 @@ $cantidad = count($planes);
                                     </td>
                                     <td class="text-center">
                                         <a href="planes_editar/<?php echo $value["id_plan"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminarPlan" id_plan="<?php echo $value["id_plan"]; ?>"> <i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger btnEliminar" data-id="<?php echo $value["id_plan"]; ?>" data-modulo="plan" id_plan=<?php echo $value["id_plan"]; ?>> <i class="fas fa-trash"></i></button>
                                     </td>
 
                                 </tr>

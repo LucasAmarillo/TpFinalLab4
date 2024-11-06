@@ -72,4 +72,20 @@ class ModeloPlanes
             return "Error: " . $e->getMessage();
         }
     }
+    static public function mdlEliminarPlan($tabla, $dato)
+    {
+        try {
+            $plan = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_plan = :id_plan");
+
+            $plan->bindParam(":id_plan", $dato, PDO::PARAM_INT);
+
+            if ($plan->execute()) {
+                return "ok";
+            } else {
+                return "error";
+            }
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }
