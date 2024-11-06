@@ -32,4 +32,20 @@ class ModeloEspecialidades
             }
         }
     }
+    static public function mdlEliminarespecialidad($tabla, $dato)
+    {
+        try {
+            $especialidad = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_especialidad = :id_especialidad");
+
+            $especialidad->bindParam(":id_especialidad", $dato, PDO::PARAM_INT);
+
+            if ($especialidad->execute()) {
+                return "ok";
+            } else {
+                return "error";
+            }
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }

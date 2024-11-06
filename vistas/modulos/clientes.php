@@ -70,9 +70,13 @@ $cantidad = count($clientes);
                                         ?>
                                     </td>
 
-                                    <td class="text-center"><a href="clientes_editar/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminar" id_cliente=<?php echo $value["id_cliente"] ?>><i class="fas fa-trash"></i></button>
+                                    <td><a href="clientes_editar/<?php echo $value["id_cliente"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+
+                                        <button
+                                            class="btn btn-danger btnEliminar" data-id="1" data-modulo="cliente"
+                                            id_cliente=<?php echo $value["id_cliente"]; ?>><i class="fas fa-trash"></i></button>
                                     </td>
+
 
                                 </tr>
 
@@ -95,6 +99,6 @@ $cantidad = count($clientes);
 <?php
 
 $eliminar = new ControladorClientes();
-$eliminar->ctrEliminarCliente(1);
+$eliminar->ctrEliminarCliente();
 
 ?>

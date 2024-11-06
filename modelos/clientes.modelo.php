@@ -79,11 +79,10 @@ class ModeloClientes
             $stmt->bindParam(":id_plan", $datos["id_plan"], PDO::PARAM_STR);
             $stmt->bindParam(":fecha_inscripcion", $datos["fecha_inscripcion"], PDO::PARAM_STR);
             $stmt->bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
-            // $stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
 
-            echo "<pre>";
-            print_r($datos);
-            echo "</pre>";
+            // echo "<pre>";
+            // print_r($datos);
+            // echo "</pre>";
             // return;
 
             $stmt->execute();
@@ -102,13 +101,14 @@ class ModeloClientes
             // return "Error: " . $e->getMessage();
         }
     }
-    static public function mdlEliminarCliente($tabla, $datos)
+    static public function mdlEliminarCliente($tabla, $dato)
     {
         try {
-            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET estado = 0 WHERE id_cliente = :id_cliente");
-            $stmt->bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
+            $cliente = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_cliente = :id_cliente");
 
-            if ($stmt->execute()) {
+            $cliente->bindParam(":id_cliente", $dato, PDO::PARAM_INT);
+
+            if ($cliente->execute()) {
                 return "ok";
             } else {
                 return "error";

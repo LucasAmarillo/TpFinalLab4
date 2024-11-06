@@ -45,4 +45,22 @@ class ControladorEntrenadores
             }
         }
     }
+    static public function ctrEliminarEntrenador()
+    {
+
+        if (isset($_GET["id_entrenador"])) {
+
+            $url = ControladorPlantilla::url() . "entrenador";
+            $tabla = "entrenador";
+            $dato = $_GET["id_entrenador"];
+
+            $respuesta = ModeloEntrenadores::mdlEliminarEntrenador($tabla, $dato);
+
+            if ($respuesta == "ok") {
+                echo '<script>
+                fncSweetAlert("success", "El entrenador se eliminó correctamente", "' . $url . '");
+                </script>';
+            }
+        }
+    }
 }

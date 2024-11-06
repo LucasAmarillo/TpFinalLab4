@@ -70,7 +70,7 @@ $cantidad = count($entrenadores);
                                     </td>
                                     <td class="text-center">
                                         <a href="entrenadores_editar/<?php echo $value["id_entrenador"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btnEliminarEntrenador" id_entrenador="<?php echo $value["id_entrenador"]; ?>"> <i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-danger btnEliminar" data-id="<?php echo $value["id_entrenador"]; ?>" data-modulo="entrenador" id_entrenador="<?php echo $value["id_entrenador"]; ?>"> <i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
                             <?php } ?>

@@ -76,10 +76,20 @@ class ControladorClientes
     }
     static public function ctrEliminarCliente()
     {
-        if (isset($_POST["id_cliente"])) {
-            $clienteId = $_POST["id_cliente"];
-            $respuesta = ModeloClientes::mdlEliminarCliente("clientes", $clienteId);
-            echo $respuesta;
+
+        if (isset($_GET["id_cliente"])) {
+
+            $url = ControladorPlantilla::url() . "clientes";
+            $tabla = "clientes";
+            $dato = $_GET["id_cliente"];
+
+            $respuesta = ModeloClientes::mdlEliminarCliente($tabla, $dato);
+
+            if ($respuesta == "ok") {
+                echo '<script>
+                fncSweetAlert("success", "El cliente se eliminó correctamente", "' . $url . '");
+                </script>';
+            }
         }
     }
 }

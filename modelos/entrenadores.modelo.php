@@ -80,4 +80,20 @@ class ModeloEntrenadores
             return "Error: " . $e->getMessage();
         }
     }
+    static public function mdlEliminarEntrenador($tabla, $dato)
+    {
+        try {
+            $entrenador = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_entrenador = :id_entrenador");
+
+            $entrenador->bindParam(":id_entrenador", $dato, PDO::PARAM_INT);
+
+            if ($entrenador->execute()) {
+                return "ok";
+            } else {
+                return "error";
+            }
+        } catch (Exception $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }
