@@ -9,7 +9,7 @@ $cantidad = count($usuarios);
             <h1 class="text-center mt-3">Usuarios</h1>
 
             <div class="card-header">
-                <a href="agregar_producto" class="btn btn-info">Agregar</a>
+                <a href="usuarios_agregar" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
             <?php if ($cantidad > 0) { ?>

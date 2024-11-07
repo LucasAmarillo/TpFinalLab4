@@ -23,7 +23,8 @@ class ControladorClientes
                 "email" => $_POST["email"],
                 "id_plan" => $_POST["id_plan"],
                 "fecha_inscripcion" => $_POST["fecha_inscripcion"],
-                "estado" => $_POST["estado"]
+                "estado" => $_POST["estado"],
+                "id_cliente" => $_POST["id_cliente"]
 
             );
 
@@ -67,7 +68,7 @@ class ControladorClientes
                 echo '<script>
                     fncSweetAlert(
                     "success",
-                    "El producto se agregó correctamente",
+                    "El cliente se agregó correctamente",
                     "' . $url . '"
                     );
                     </script>';

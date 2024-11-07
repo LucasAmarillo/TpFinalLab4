@@ -20,6 +20,7 @@ $url = ControladorPlantilla::url();
 
     <!-- App css -->
     <link href="<?php echo $url; ?>vistas/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="<?php echo $url; ?>vistas/assets/css/inputs.css" rel="stylesheet" type="text/css" id="app-style" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 

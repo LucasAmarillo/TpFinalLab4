@@ -5,7 +5,7 @@ $(document).on("click", ".btnEliminar", function () {
   let titulo = "Está seguro de eliminar el " + modulo + "?";
   let confirmar = "Si, eliminar " + modulo;
 
-  if (modulo == "especialidades") {
+  if (modulo === "especialidades") {
     titulo = "Está seguro de eliminar la especialidad?";
     confirmar = "Si, eliminar especialidad";
   }
@@ -20,8 +20,10 @@ $(document).on("click", ".btnEliminar", function () {
     confirmButtonText: confirmar,
   }).then(function (result) {
     if (result.isConfirmed) {
-      window.location =
-        "index.php?pagina=" + modulo + "&id_" + modulo + "+" + id_item;
+      let pagina = modulo === "especialidades" ? modulo : modulo + "s";
+      // window.location =
+      //   "index.php?pagina=" + modulo + "&id_" + modulo + "+" + id_item;
+      window.location = `index.php?pagina=${pagina}&id_${modulo}=${id_item}`; //Ternario
     }
   });
 });

@@ -10,25 +10,55 @@ class ControladorEntrenadores
         $respuesta = ModeloEntrenadores::mdlMostrarEntrenadores($item, $valor);
         return $respuesta;
     }
+    static public function ctrAgregarEntrenador()
+    {
+
+        $tabla = "entrenadores";
+
+        if (isset($_POST["nombre"])) {
+
+            $datos = array(
+                "nombre" => $_POST["nombre"],
+                "apellido" => $_POST["apellido"],
+                "dni" => $_POST["dni"],
+                "telefono" => $_POST["telefono"],
+                "email" => $_POST["email"],
+                "fecha_contratacion" => $_POST["fecha_contratacion"],
+                "estado" => $_POST["estado"]
+            );
+            $url = ControladorPlantilla::url() . "entrenadores";
+            $respuesta = ModeloEntrenadores::mdlAgregarEntrenador($tabla, $datos);
+            if ($respuesta == "ok") {
+                echo '<script>
+                    fncSweetAlert(
+                    "success",
+                    "El entrenadores se agregó correctamente",
+                    "' . $url . '"
+                    );
+                    </script>';
+            }
+        }
+    }
     public function ctrEditarEntrenador()
     {
         $tabla = "entrenadores";
         if (isset($_POST["id_entrenador"])) {
             $datos = array(
+                "id_entrenador" => $_POST["id_entrenador"],
                 "nombre" => $_POST["nombre"],
                 "apellido" => $_POST["apellido"],
                 "dni" => $_POST["dni"],
-                "direccion" => $_POST["direccion"],
                 "telefono" => $_POST["telefono"],
                 "email" => $_POST["email"],
-                "fecha_inscripcion" => $_POST["fecha_inscripcion"],
+                "fecha_contratacion" => $_POST["fecha_contratacion"],
+                "id_plan" => $_POST["tipo"],
                 "estado" => $_POST["estado"]
 
             );
 
-            echo "<pre>";
-            print_r($datos);
-            echo "</pre>";
+            // echo "<pre>";
+            // print_r($datos);
+            // echo "</pre>";
             //            return;
 
             $url = ControladorPlantilla::url() . "entrenadores";

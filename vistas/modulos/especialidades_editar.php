@@ -10,7 +10,7 @@ $especialidad = ControladorEspecialidades::ctrMostrarEspecialidades($item, $valo
 
 if ($especialidad) {
 ?>
-
+    2
     <div class="col-lg-12 mt-4">
         <div class="card">
 

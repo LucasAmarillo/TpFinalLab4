@@ -22,10 +22,10 @@ class ModeloUsuarios
         } else {
 
             try {
-                $productos = Conexion::conectar()->prepare("SELECT * FROM usuarios");
-                $productos->execute();
+                $usuarios = Conexion::conectar()->prepare("SELECT * FROM usuarios");
+                $usuarios->execute();
 
-                return $productos->fetchAll(PDO::FETCH_ASSOC);
+                return $usuarios->fetchAll(PDO::FETCH_ASSOC);
             } catch (Exception $e) {
                 return "Error: " . $e->getMessage();
             }
