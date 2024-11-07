@@ -17,6 +17,9 @@ require_once 'modelos/especialidades.modelo.php';
 require_once 'controladores/planes.controlador.php';
 require_once 'modelos/planes.modelo.php';
 
+require_once 'controladores/pagos.controlador.php';
+require_once 'modelos/pagos.modelo.php';
+
 require_once 'controladores/usuarios.controlador.php';
 require_once 'modelos/usuarios.modelo.php';
 

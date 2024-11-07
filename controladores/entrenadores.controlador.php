@@ -80,8 +80,8 @@ class ControladorEntrenadores
 
         if (isset($_GET["id_entrenador"])) {
 
-            $url = ControladorPlantilla::url() . "entrenador";
-            $tabla = "entrenador";
+            $url = ControladorPlantilla::url() . "entrenadores";
+            $tabla = "entrenadores";
             $dato = $_GET["id_entrenador"];
 
             $respuesta = ModeloEntrenadores::mdlEliminarEntrenador($tabla, $dato);

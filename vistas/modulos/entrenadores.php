@@ -12,9 +12,9 @@ $cantidad = count($entrenadores);
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-4" alt=" entrenador"> </h1>
+            <h1 class="text-center">Listado de entrenadores <img src="vistas/assets/img/entrenador.png" style="width: 3%;" class="mt-2" alt="entrenador"> </h1>
 
-            <div class="card-header">
+            <div class="card-header mt-1 mb-1">
                 <a href="entrenadores_agregar" class="btn btn-info">Agregar</a>
             </div><!-- end card header -->
 
@@ -71,6 +71,7 @@ $cantidad = count($entrenadores);
                                     <td class="text-center">
                                         <a href="entrenadores_editar/<?php echo $value["id_entrenador"] ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btnEliminar" data-id="<?php echo $value["id_entrenador"]; ?>" data-modulo="entrenador" id_entrenador="<?php echo $value["id_entrenador"]; ?>"> <i class="fas fa-trash"></i></button>
+                                        
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -89,7 +90,7 @@ $cantidad = count($entrenadores);
 
 <?php
 
-// $eliminar = new ModeloUsuarios();
-// $eliminar->ctrEliminarUsuario();
+$eliminar = new ControladorEntrenadores();
+$eliminar->ctrEliminarEntrenador()
 
 ?>

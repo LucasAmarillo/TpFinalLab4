@@ -4,6 +4,7 @@ $planes = ControladorPlanes::ctrMostrarPlanes(null, null);
 // echo "<pre>";
 // print_r($planes);
 // echo "</pre>";
+
 $cantidad = count($planes);
 ?>
 <div class="row">
@@ -81,7 +82,7 @@ $cantidad = count($planes);
 
 <?php
 
-// $eliminar = new ModeloUsuarios();
-// $eliminar->ctrEliminarUsuario();
+$eliminar = new ControladorPlanes();
+$eliminar->ctrEliminarPlan();
 
 ?>
