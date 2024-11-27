@@ -1,0 +1,2 @@
+<!-- $eliminar = new ControladorReservas();
+$eliminar->ctrEliminarReservas(); -->

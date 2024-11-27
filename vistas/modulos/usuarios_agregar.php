@@ -67,7 +67,7 @@ $entrenador = ControladorEntrenadores::ctrMostrarEntrenadores(null, null);
                     <a href="<?php echo $url; ?>/index.php?pagina=planes" class="btn btn-secondary">
                         <i class="fa-solid fa-arrow-left"></i> Regresar
                     </a>
-                    <button class="btn btn-info btnEditaCliente justify-content-center" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                    <button class="btn btn-info btnEditaUsuario justify-content-center" type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
                 </div>
 
             </form>

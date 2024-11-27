@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $url = ControladorPlantilla::url();
 ?>
 
@@ -9,7 +9,7 @@ $url = ControladorPlantilla::url();
 <head>
 
     <meta charset="utf-8" />
-    <title>Gestión de gimnasios - Amarillo_Ordoñez</title>
+    <title>Gestión de reservas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc." />
     <meta name="author" content="UTN" />
@@ -63,89 +63,85 @@ $url = ControladorPlantilla::url();
 
 <!-- body start -->
 
-<?php if (isset($_SESSION["iniciarSesion"])) { ?>
+<!-- <//?php if (isset($_SESSION["iniciarSesion"])) { ?> -->
 
-    <body data-menu-color="dark" data-sidebar="default">
+<body data-menu-color="dark" data-sidebar="default">
 
-        <!-- Begin page -->
-        <div id="app-layout">
+    <!-- Begin page -->
+    <div id="app-layout">
 
-            <!-- Topbar Start -->
-            <?php include 'modulos/header.php' ?>
-            <!-- end Topbar -->
+        <!-- Topbar Start -->
+        <?php include 'modulos/header.php' ?>
+        <!-- end Topbar -->
 
-            <!-- Left Sidebar Start -->
-            <?php include 'modulos/menu.php' ?>
-            <!-- Left Sidebar End -->
+        <!-- Left Sidebar Start -->
+        <?php include 'modulos/menu.php' ?>
+        <!-- Left Sidebar End -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
 
-            <div class="content-page">
-                <?php
+        <div class="content-page">
+            <?php
 
-                if (isset($_GET["pagina"])) {
+            if (isset($_GET["pagina"])) {
 
-                    $rutas = explode('/', $_GET["pagina"]);
+                $rutas = explode('/', $_GET["pagina"]);
 
-                    if (
-                        $rutas[0] == "home" ||
-                        $rutas[0] == "clientes" ||
-                        $rutas[0] == "clientes_agregar" ||
-                        $rutas[0] == "clientes_editar" ||
-                        $rutas[0] == "entrenadores" ||
-                        $rutas[0] == "entrenadores_agregar" ||
-                        $rutas[0] == "entrenadores_detalle" ||
-                        $rutas[0] == "entrenadores_editar" ||
-                        $rutas[0] == "especialidades" ||
-                        $rutas[0] == "especialidades_agregar" ||
-                        $rutas[0] == "especialidades_editar" ||
-                        $rutas[0] == "pagos" ||
-                        $rutas[0] == "pagos_agregar" ||
-                        $rutas[0] == "pagos_editar" ||
-                        $rutas[0] == "pagos_detalle" ||
-                        $rutas[0] == "planes" ||
-                        $rutas[0] == "planes_agregar" ||
-                        $rutas[0] == "planes_editar" ||
-                        $rutas[0] == "usuarios" ||
-                        $rutas[0] == "usuarios_agregar" ||
-                        $rutas[0] == "usuarios_editar" ||
-                        $rutas[0] == "salir"
-                    ) {
-                        include "vistas/modulos/" . $rutas[0] . ".php";
-                    } else {
+                if (
+                    $rutas[0] == "home" ||
+                    $rutas[0] == "checkin" ||
+                    $rutas[0] == "checkin_agregar" ||
+                    $rutas[0] == "checkin_editar" ||
+                    $rutas[0] == "habitaciones" ||
+                    $rutas[0] == "habitaciones_agregar" ||
+                    $rutas[0] == "habitaciones_editar" ||
+                    $rutas[0] == "huespedes" ||
+                    $rutas[0] == "huespedes_agregar" ||
+                    $rutas[0] == "huespedes_editar" ||
+                    $rutas[0] == "reservas" ||
+                    $rutas[0] == "reservas_listado" ||
+                    $rutas[0] == "reservas_agregar" ||
+                    $rutas[0] == "reservas_editar" ||
+                    $rutas[0] == "usuarios" ||
+                    $rutas[0] == "usuarios_agregar" ||
+                    $rutas[0] == "usuarios_editar" ||
+                    $rutas[0] == "salir"
+                ) {
+                    include "vistas/modulos/" . $rutas[0] . ".php";
+                } else {
 
-                        include "vistas/modulos/404.php";
-                    }
+                    include "vistas/modulos/404.php";
                 }
+            }
 
-                ?>
+            ?>
 
-                <!-- Footer Start -->
-                <?php include 'modulos/footer.php' ?>
-                <!-- end Footer -->
-
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
+            <!-- Footer Start -->
+            <?php include 'modulos/footer.php' ?>
+            <!-- end Footer -->
 
         </div>
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
 
-        <!-- App js-->
-        <script src="<?php echo $url; ?>vistas/assets/js/app.js"></script>
+
+    </div>
+
+    <!-- App js-->
+    <script src="<?php echo $url; ?>vistas/assets/js/app.js"></script>
 
 
 
-    </body>
+</body>
 
-<?php } else {
+<!-- <//?php } else {
     include "vistas/modulos/login.php";
-}
+} 
 
-?>
+?> -->
 
 
 

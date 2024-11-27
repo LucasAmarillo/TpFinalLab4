@@ -14,18 +14,18 @@
                                     <img src="<?php echo $url; ?>vistas/assets/img/logo.png" alt="" style="width: 100%; max-width: 400px;">
                                 </div>
                                 <div class="auth-title-section mb-3 text-center">
-                                    <h3 class="text-dark fs-20 fw-medium mb-2">Ingresar al sistema de gestión</h3>
+                                    <h3 class="text-dark fs-20 fw-medium mb-2">Inicio del sistema</h3>
                                     <p class="text-dark text-capitalize fs-14 mb-0">Ingrese sus datos</p>
                                 </div>
                                 <form method="POST" class="my-4 w-50">
                                     <div class="form-group mb-3">
-                                        <label for="email" class="form-label">Correo electrónica</label>
-                                        <input class="form-control" type="email" id="email" name="email" required="" placeholder="Ingrese su correo electrónica">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input class="form-control" type="email" id="email" name="email" required="" placeholder="Ingrese su email">
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password" class="form-label">Contraseña</label>
-                                        <input class="form-control" type="password" required="" id="password" name="password" placeholder="Ingrese su contraseña">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input class="form-control" type="password" required="" id="password" name="password" placeholder="Ingrese su password">
                                     </div>
 
                                     <div class="form-group mb-0 row">
@@ -34,9 +34,6 @@
                                                 <button class="btn btn-primary" type="submit"> Ingresar </button>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="text-center mt-3">
-                                        <p class="mb-0">¿No tienes una cuenta? <a href="?pagina=signup" class="text-primary">Regístrate aquí</a></p>
                                     </div>
                                     <?php
                                     $ingreso = new ControladorUsuarios();

@@ -14,6 +14,6 @@ class ControladorPlantilla
     static public function url()
     {
 
-        return "http://localhost/sistema/";
+        return "http://localhost/TpFinal/";
     }
 }

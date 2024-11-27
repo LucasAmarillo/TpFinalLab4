@@ -24,7 +24,7 @@
             </div>r
             <ul id="side-menu" class="ml-4">
 
-                <li class="menu-title">Menu</li>
+                <li class="menu-title">Menu Principal</li>
 
                 <li>
                     <a href="<?php echo $url; ?>home">
@@ -33,35 +33,41 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>clientes">
+                    <a href="<?php echo $url; ?>huespedes">
                         <i data-feather="globe"></i>
-                        <span> Clientes </span>
+                        <span> Huéspedes </span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>entrenadores">
+                    <a href="<?php echo $url; ?>habitaciones">
                         <i data-feather="globe"></i>
-                        <span> Entrenadores </span>
+                        <span> Habitaciones </span>
+                    </a>
+                </li>
+            </ul>
+            <ul id="side-menu" class="ml-4">
+                <li class="menu-title">Gestión de reservas</li>
+                <li>
+                    <a href="<?php echo $url; ?>checkin">
+                        <i data-feather="aperture"></i>
+                        <span> Check-in </span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>especialidades">
-                        <i data-feather="globe"></i>
-                        <span> Especialidades </span>
+                    <a href="<?php echo $url; ?>reservas_listado">
+                        <i data-feather="aperture"></i>
+                        <span> Listado de reservas </span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo $url; ?>pagos">
-                        <i data-feather="globe"></i>
-                        <span> Pagos </span>
+                    <a href="<?php echo $url; ?>reservas">
+                        <i data-feather="aperture"></i>
+                        <span> Reservas </span>
                     </a>
                 </li>
-                <li>
-                    <a href="<?php echo $url; ?>planes">
-                        <i data-feather="globe"></i>
-                        <span> Planes </span>
-                    </a>
-                </li>
+            </ul>
+            <ul id="side-menu" class="ml-4">
+                <li class="menu-title">Administración</li>
                 <li>
                     <a href="<?php echo $url; ?>usuarios">
                         <i data-feather="aperture"></i>
